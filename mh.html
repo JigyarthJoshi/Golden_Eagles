@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="home.css" rel="stylesheet" type="text/css" />
+ 
+<link rel="stylesheet" href="footer.css">
+ 
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+<style>
+
+  body {
+  background: #1a1e23;
+  margin: 0;
+}
+
+.bubbles {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  left: var(--bubble-left-offset);
+  bottom: -75%;
+  display: block;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
+  border-radius: 50%;
+  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
+}
+.bubble::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 97, 229, 0.3);
+  border-radius: inherit;
+  animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+}
+.bubble:nth-child(0) {
+  --bubble-left-offset: 43vw;
+  --bubble-radius: 5vw;
+  --bubble-float-duration: 12s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: 1s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(1) {
+  --bubble-left-offset: 31vw;
+  --bubble-radius: 9vw;
+  --bubble-float-duration: 7s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: 4s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(2) {
+  --bubble-left-offset: 70vw;
+  --bubble-radius: 9vw;
+  --bubble-float-duration: 10s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 0s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(3) {
+  --bubble-left-offset: 22vw;
+  --bubble-radius: 5vw;
+  --bubble-float-duration: 7s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: 0s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(4) {
+  --bubble-left-offset: 92vw;
+  --bubble-radius: 4vw;
+  --bubble-float-duration: 9s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 0s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(5) {
+  --bubble-left-offset: 10vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 6s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(6) {
+  --bubble-left-offset: 62vw;
+  --bubble-radius: 1vw;
+  --bubble-float-duration: 7s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: 2s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(7) {
+  --bubble-left-offset: 100vw;
+  --bubble-radius: 9vw;
+  --bubble-float-duration: 6s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: 4s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(8) {
+  --bubble-left-offset: 48vw;
+  --bubble-radius: 3vw;
+  --bubble-float-duration: 11s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: 0s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(9) {
+  --bubble-left-offset: 70vw;
+  --bubble-radius: 6vw;
+  --bubble-float-duration: 7s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: 4s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(10) {
+  --bubble-left-offset: 44vw;
+  --bubble-radius: 2vw;
+  --bubble-float-duration: 8s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: 1s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(11) {
+  --bubble-left-offset: 5vw;
+  --bubble-radius: 7vw;
+  --bubble-float-duration: 8s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(12) {
+  --bubble-left-offset: 85vw;
+  --bubble-radius: 7vw;
+  --bubble-float-duration: 6s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(13) {
+  --bubble-left-offset: 13vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 9s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 2s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(14) {
+  --bubble-left-offset: 94vw;
+  --bubble-radius: 5vw;
+  --bubble-float-duration: 10s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 2s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(15) {
+  --bubble-left-offset: 75vw;
+  --bubble-radius: 7vw;
+  --bubble-float-duration: 12s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(16) {
+  --bubble-left-offset: 43vw;
+  --bubble-radius: 9vw;
+  --bubble-float-duration: 8s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: 0s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(17) {
+  --bubble-left-offset: 92vw;
+  --bubble-radius: 6vw;
+  --bubble-float-duration: 11s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: 1s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(18) {
+  --bubble-left-offset: 39vw;
+  --bubble-radius: 7vw;
+  --bubble-float-duration: 10s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(19) {
+  --bubble-left-offset: 26vw;
+  --bubble-radius: 9vw;
+  --bubble-float-duration: 6s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 1s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(20) {
+  --bubble-left-offset: 80vw;
+  --bubble-radius: 9vw;
+  --bubble-float-duration: 9s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: 2s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(21) {
+  --bubble-left-offset: 82vw;
+  --bubble-radius: 3vw;
+  --bubble-float-duration: 8s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 0s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(22) {
+  --bubble-left-offset: 66vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 7s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: 1s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(23) {
+  --bubble-left-offset: 31vw;
+  --bubble-radius: 5vw;
+  --bubble-float-duration: 10s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: 0s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(24) {
+  --bubble-left-offset: 83vw;
+  --bubble-radius: 9vw;
+  --bubble-float-duration: 8s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: 4s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(25) {
+  --bubble-left-offset: 36vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 8s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: 1s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(26) {
+  --bubble-left-offset: 32vw;
+  --bubble-radius: 4vw;
+  --bubble-float-duration: 12s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(27) {
+  --bubble-left-offset: 30vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 11s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 1s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(28) {
+  --bubble-left-offset: 20vw;
+  --bubble-radius: 1vw;
+  --bubble-float-duration: 9s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(29) {
+  --bubble-left-offset: 55vw;
+  --bubble-radius: 3vw;
+  --bubble-float-duration: 9s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 0s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(30) {
+  --bubble-left-offset: 3vw;
+  --bubble-radius: 7vw;
+  --bubble-float-duration: 8s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(31) {
+  --bubble-left-offset: 29vw;
+  --bubble-radius: 4vw;
+  --bubble-float-duration: 8s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 1s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(32) {
+  --bubble-left-offset: 65vw;
+  --bubble-radius: 6vw;
+  --bubble-float-duration: 7s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 2s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(33) {
+  --bubble-left-offset: 33vw;
+  --bubble-radius: 2vw;
+  --bubble-float-duration: 10s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 1s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(34) {
+  --bubble-left-offset: 70vw;
+  --bubble-radius: 9vw;
+  --bubble-float-duration: 10s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: 1s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(35) {
+  --bubble-left-offset: 29vw;
+  --bubble-radius: 2vw;
+  --bubble-float-duration: 12s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: 0s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(36) {
+  --bubble-left-offset: 31vw;
+  --bubble-radius: 5vw;
+  --bubble-float-duration: 12s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 4s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(37) {
+  --bubble-left-offset: 25vw;
+  --bubble-radius: 7vw;
+  --bubble-float-duration: 8s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 3s;
+  --bubble-sway-delay: 4s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(38) {
+  --bubble-left-offset: 60vw;
+  --bubble-radius: 1vw;
+  --bubble-float-duration: 8s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: 4s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(39) {
+  --bubble-left-offset: 41vw;
+  --bubble-radius: 9vw;
+  --bubble-float-duration: 10s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(40) {
+  --bubble-left-offset: 1vw;
+  --bubble-radius: 1vw;
+  --bubble-float-duration: 9s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(41) {
+  --bubble-left-offset: 69vw;
+  --bubble-radius: 9vw;
+  --bubble-float-duration: 8s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: 4s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(42) {
+  --bubble-left-offset: 61vw;
+  --bubble-radius: 8vw;
+  --bubble-float-duration: 6s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: 1s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(43) {
+  --bubble-left-offset: 86vw;
+  --bubble-radius: 7vw;
+  --bubble-float-duration: 11s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 4s;
+  --bubble-sway-delay: 1s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(44) {
+  --bubble-left-offset: 69vw;
+  --bubble-radius: 7vw;
+  --bubble-float-duration: 7s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: 0s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(45) {
+  --bubble-left-offset: 20vw;
+  --bubble-radius: 2vw;
+  --bubble-float-duration: 11s;
+  --bubble-sway-duration: 6s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: 4s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(46) {
+  --bubble-left-offset: 13vw;
+  --bubble-radius: 9vw;
+  --bubble-float-duration: 10s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 1s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(47) {
+  --bubble-left-offset: 17vw;
+  --bubble-radius: 1vw;
+  --bubble-float-duration: 12s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(48) {
+  --bubble-left-offset: 18vw;
+  --bubble-radius: 1vw;
+  --bubble-float-duration: 9s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: 2s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(49) {
+  --bubble-left-offset: 52vw;
+  --bubble-radius: 10vw;
+  --bubble-float-duration: 11s;
+  --bubble-sway-duration: 4s;
+  --bubble-float-delay: 0s;
+  --bubble-sway-delay: 0s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(50) {
+  --bubble-left-offset: 69vw;
+  --bubble-radius: 1vw;
+  --bubble-float-duration: 8s;
+  --bubble-sway-duration: 5s;
+  --bubble-float-delay: 2s;
+  --bubble-sway-delay: 3s;
+  --bubble-sway-type: sway-right-to-left;
+}
+
+@keyframes float-up {
+  to {
+    transform: translateY(-175vh);
+  }
+}
+@keyframes sway-left-to-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes sway-right-to-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h2 {
+  font-size: 26px;
+  margin: 20px 0;
+  text-align: center;
+}
+h2 small {
+  font-size: 0.5em;
+}
+
+.responsive-table li {
+  border-radius: 3px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.responsive-table .table-header {
+  background-color: #ebe4e7;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.responsive-table .table-row {
+  background-color: #d8ced4;
+  box-shadow: 10px 10px 9px 0px rgba(0, 0, 0, 0.1);
+}
+.responsive-table .col-1 {
+  flex-basis: 100;
+}
+.responsive-table .col-2 {
+  flex-basis: 100;
+}
+.responsive-table .col-3 {
+  flex-basis: 100;
+}
+.responsive-table .col-4 {
+  flex-basis: 25%;
+}
+@media all and (max-width: 767px) {
+  .responsive-table .table-header {
+    display: none;
+  }
+  .responsive-table li {
+    display: block;
+  }
+  .responsive-table .col {
+    flex-basis: 100%;
+  }
+  .responsive-table .col {
+    display: flex;
+    padding: 10px 0;
+  }
+  .responsive-table .col:before {
+    color: #b33a7c;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
+}
+
+.collapsible {
+  background-color: rgb(192, 62, 116);
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: rgb(122, 59, 158);
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+.c{
+  color: rgb(59, 119, 199);
+  margin-top: 30px;
+  
+}
+
+
+
+</style>
+
+</head>
+
+
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      Health & Happiness
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    <a href="HomePage.html"><span class="glyphicon glyphicon-home"></span> Home</a>
+    <a href="FAQs.html">FAQs</a>
+    <a href="covid.html">Covid</a>
+    <a href="1.html">Insurance</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a>
+    <a href="login.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+</div>
+<body>
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+ <h2 class="c"  > View your and your husband's plan</h2>
+  <div class="container">
+
+    <ul class="responsive-table">
+
+            <button class="collapsible">6 months
+            </button>
+            <div class="content">
+              <li class="table-row">
+                <div class="col col-1" data-label="Premium"> 2800</div>
+                <div class="col col-2" data-label="Risk cover">7 lakh</div>
+                <div class="col col-3" data-label="Slab">1</div>
+                <div class="col col-4" data-label="Register" ><a href="#" onclick="myFunction()">submit</a></div>
+              </li>
+
+              <li class="table-row">
+                <div class="col col-1" data-label="Premium">3500</div>
+                <div class="col col-2" data-label="Risk cover">9 lakh</div>
+                <div class="col col-3" data-label="Slab">2
+                </div>
+                <div class="col col-4" data-label="Register" ><a href="#" onclick="myFunction()">submit</a></div>
+              </li>
+            </div>
+              
+            <button class="collapsible">1 year 
+            </button>
+            <div class="content">
+            
+              <li class="table-row">
+                <div class="col col-1" data-label="Premium">5500
+                </div>
+                <div class="col col-2" data-label="Risk cover">7 lakh
+                </div>
+                <div class="col col-3" data-label="Slab">2
+                </div>
+                <div class="col col-4" data-label="Register" ><a href="#" onclick="myFunction()">submit</a></div>
+              </li>
+
+              <li class="table-row">
+                <div class="col col-1" data-label="Premium">6800
+                </div>
+                <div class="col col-2" data-label="Risk cover">9 lakh
+                </div>
+                <div class="col col-3" data-label="Slab">3
+                </div>
+                <div class="col col-4" data-label="Register" ><a href="#" onclick="myFunction()">submit</a></div>
+              </li>
+            
+            <!-- <li class="table-row">
+              <div class="col col-1" data-label="Job Id">Engineering Physics </div>
+              <div class="col col-2" data-label="Customer Name">Gaur, Gupta</div>
+              <div class="col col-3" data-label="Amount">Dhanpat Rai and Sons Publications
+              </div>
+              <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+            </li> -->
+          </div>
+            <button class="collapsible">2 year
+            </button>
+            <div class="content">
+              <li class="table-row">
+                <div class="col col-1" data-label="Premium">10500
+                </div>
+                <div class="col col-2" data-label="Risk cover">10 lakh
+                </div>
+                <div class="col col-3" data-label="Slab">2
+                </div>
+                <div class="col col-4" data-label="Register" ><a href="#" onclick="myFunction()">submit</a></div>
+              </li>
+
+              <li class="table-row">
+                <div class="col col-1" data-label="Premium">13000
+                </div>
+                <div class="col col-2" data-label="Risk cover">12lakh
+                </div>
+                <div class="col col-3" data-label="Slab"> 3
+                </div>
+                <div class="col col-4" data-label="Register" ><a href="#" onclick="myFunction()">submit</a></div>
+              </li>
+              <!-- <li class="table-row">
+                <div class="col col-1" data-label="Job Id">Basics of Mechanical Engineering
+
+                </div>
+                <div class="col col-2" data-label="Customer Name"> Agrawal,Basant and Agrawal, C. M., (2008),
+                </div>
+                <div class="col col-3" data-label="Amount"> ohn Wiley and Sons, USA
+                </div>
+                <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+              </li> -->
+            </div>
+            <button class="collapsible"> 3 year
+            </button>
+            <div class="content">
+              <li class="table-row">
+                <div class="col col-1" data-label="Premium">14,000
+                </div>
+                <div class="col col-2" data-label="Risk cover"> 11 lakh
+                </div>
+                <div class="col col-3" data-label="Slab">3
+                </div>
+                <div class="col col-4" data-label="Register" ><a href="#" onclick="myFunction()">submit</a></div>
+              </li>
+
+              <li class="table-row">
+                <div class="col col-1" data-label="Premium">14000
+                </div>
+                <div class="col col-2" data-label="Risk cover"> 15 lakh</div>
+                
+                <div class="col col-3" data-label="Slab">   4
+                </div>
+                <div class="col col-4" data-label="Register" ><a href="#" onclick="myFunction()">submit</a></div>
+              </li>
+              <!-- <li class="table-row">
+                <div class="col col-1" data-label="Job Id">Basic Electrical Engineering
+                </div>
+                <div class="col col-2" data-label="Customer Name">V.K. Mehta
+                </div>
+                <div class="col col-3" data-label="Amount">S Chand Publications
+                </div>
+                <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+              </li>
+              <li class="table-row">
+                <div class="col col-1" data-label="Job Id">A text book on electrical technology
+                </div>
+                <div class="col col-2" data-label="Customer Name"> B.L. Theraja
+                </div>
+                <div class="col col-3" data-label="Amount">Vol-I
+                </div>
+                <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+              </li> -->
+
+
+            <!-- </div>
+            <button class="collapsible">Programming and Problem Solving
+            </button>
+            <div class="content">
+              <li class="table-row">
+                <div class="col col-1" data-label="Job Id">Python Programming Using Problem Solving Approach
+                </div>
+                <div class="col col-2" data-label="Customer Name"> Reema Thareja
+                </div>
+                <div class="col col-3" data-label="Amount">Oxford University Press, 
+                </div>
+                <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+              </li>
+
+              <li class="table-row">
+                <div class="col col-1" data-label="Job Id">Core Python Programming
+                </div>
+                <div class="col col-2" data-label="Customer Name">R. Nageswara Rao
+                </div>
+                <div class="col col-3" data-label="Amount">Dreamtech Press; Second edition ISBN-
+                </div>
+                <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+              </li>
+            </div>
+            </div> -->
+            
+          </ul>
+          <!-- <div class="container">
+
+            <ul class="responsive-table">
+        
+                    <button class="collapsible">Engineering Mathematics-II
+                    </button>
+                    <div class="content">
+                  
+                      <li class="table-row">
+                        <div class="col col-1" data-label="Job Id"> Higher Engineering Mathematics 
+                        </div>
+                        <div class="col col-2" data-label="Customer Name">B.V. Ramana</div>
+                        <div class="col col-3" data-label="Amount">Tata-McGraw Hill</div>
+                        <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+                      </li>
+                      
+                      <li class="table-row">
+                        <div class="col col-1" data-label="Job Id">Higher Engineering Mathematics</div>
+                        <div class="col col-2" data-label="Customer Name">B.S.Grewal</div>
+                        <div class="col col-3" data-label="Amount">Khanna Publication, Delhi
+                        </div>
+                        <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+                      </li>
+                    </div>
+                    <button class="collapsible">Engineering Chemistry
+
+                    </button>
+                    <div class="content">
+                  
+                      <li class="table-row">
+                        <div class="col col-1" data-label="Job Id"> Engineering Chemistry 
+
+                        </div>
+                        <div class="col col-2" data-label="Customer Name">O .G. Palanna, Tata Magraw
+                        </div>
+                        <div class="col col-3" data-label="Amount">   Hill Education Pvt. Ltd.
+                        </div>
+                        <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+                      </li>
+                      
+                      <li class="table-row">
+                        <div class="col col-1" data-label="Job Id">Textbook of Engineering Chemistry 
+                        </div>
+                        <div class="col col-2" data-label="Customer Name">Dr. S. S. Dara, Dr. S. S. Umare
+                        </div>
+                        <div class="col col-3" data-label="Amount">   Chand & Company Ltd.
+
+                        </div>
+                        <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+                      </li>
+                      <li class="table-row">
+                        <div class="col col-1" data-label="Job Id">Textbook of Engineering Chemistry 
+                        </div>
+                        <div class="col col-2" data-label="Customer Name">Dr. Sunita Rattan
+
+                        </div>
+                        <div class="col col-3" data-label="Amount">   S. K. Kataria& Sons Publisher
+
+
+                        </div>
+                        <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+                      </li>
+                    </div>
+                    <button class="collapsible">Basic Electronics Engineering
+
+                    </button>
+                    <div class="content">
+                  
+                      <li class="table-row">
+                        <div class="col col-1" data-label="Job Id"> Digital Fundamentals
+
+                        </div>
+                        <div class="col col-2" data-label="Customer Name">Thomas. L. Floyd
+                        </div>
+                        <div class="col col-3" data-label="Amount">11th Edition, Pearson
+                        </div>
+                        <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+                      </li>
+                      
+                      <li class="table-row">
+                        <div class="col col-1" data-label="Job Id">Mobile Communication
+                        </div>
+                        <div class="col col-2" data-label="Customer Name">J. Schiller
+                        </div>
+                        <div class="col col-3" data-label="Amount">2nd Edition, Pearson
+
+                        </div>
+                        <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+                      </li>
+                      <li class="table-row">
+                        <div class="col col-1" data-label="Job Id">Sensors Handbook
+
+                        </div>
+                        <div class="col col-2" data-label="Customer Name">S. Soloman, 
+
+                        </div>
+                        <div class="col col-3" data-label="Amount">2nd Edition
+
+                        </div>
+                        <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+                      </li>
+                    </div>
+                    <button class="collapsible">Engineering Mechanics
+
+                    </button>
+                    <div class="content">
+                  
+                      <li class="table-row">
+                        <div class="col col-1" data-label="Job Id"> Vector Mechanics for Engineers, 
+
+                        </div>
+                        <div class="col col-2" data-label="Customer Name">F. P. Beer and E. R. Johnson
+                        </div>
+                        <div class="col col-3" data-label="Amount">McGraw-Hill Publication
+                        </div>
+                        <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+                      </li>
+                      
+                      <li class="table-row">
+                        <div class="col col-1" data-label="Job Id">Engineering Mechanics 
+                        </div>
+                        <div class="col col-2" data-label="Customer Name">R. C. Hibbeler
+                        </div>
+                        <div class="col col-3" data-label="Amount">Pearson Education
+
+                        </div>
+                        <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div>
+                      </li>
+                    </div>
+                    
+                    </div>
+                      </ul> -->
+ </div>
+ <footer class="footer-distributed">
+
+  <div class="footer-left">
+      <img src="logo.jpeg">
+    <h3>Health 'n' Happiness</span></h3>
+
+    <p class="footer-links">
+      <a href="#">Home</a>
+      |
+      <a href="#">Services</a>
+      |
+      <a href="#">Meet Proffesionals</a>
+      |
+      <a href="#">Achievements</a>
+      |
+      <a href="#">Login</a>
+      |
+      <a href="#">About</a>
+      |
+      <a href="#">Contact</a>
+      |
+      <a href="#">FAQs</a>
+    </p>
+
+    <p class="footer-company-name">© 2021 Health 'n' Happiness Pvt. Ltd.</p>
+  </div>
+
+  <div class="footer-center">
+    <div>
+      <i class="fa fa-map-marker"></i>
+        <p><span>309 - Rupa Solitaire,
+         Bldg. No. A - 1, Sector - 1</span>
+        Mahape, Navi Mumbai - 400710</p>
+    </div>
+
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>+91 22-27782183</p>
+    </div>
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@hnh.com">support@hnh.com</a></p>
+    </div>
+  </div>
+  <div class="footer-right">
+    <p class="footer-company-about">
+      <span>About the group</span>
+      We provide the best health sevices in the country. With a wide network of hundreds of hospitals and medical proffesionals, we aim to provide all in one health assistance at one place.</p>
+    <div class="footer-icons">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+function myFunction() {
+  alert("Registered Successfully!");
+}
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>

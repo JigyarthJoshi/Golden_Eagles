@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="home.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="footer.css">
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+}
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+
+li.dropdown {
+  display: inline-block;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(255, 169, 169);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background:rgb(63, 63, 54);
+}
+
+.card {
+  width: 75%;
+  height: 75%;
+  max-height: 300px;
+  padding: auto;
+  text-align: center;
+  background: #690835;
+  border-radius: 10px;
+  box-shadow: 25px 25px 50px #1b1c1b, -25px -25px 50px #2d302f;
+  
+}
+.card__container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  color: white;
+}
+.card__content {
+  width: 90%;
+  height: 95%;
+  background: #eb89a1;
+  margin: 10px auto;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: 16px 16px 44px #0a0a0a, -16px -16px 44px #282a28;
+  transition: 0.3s all ease-in-out;
+}
+.card__content:hover {
+  margin-top: -10px;
+}
+.card__header {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 40px auto;
+  font-family: cursive;
+  color: rgb(16, 17, 17);
+}
+.card__button {
+  padding: 10px;
+  border-radius: 50px;
+  background: #1f75c4;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  margin: 50px auto;
+}
+
+.glow {
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  font-family: cursive;
+  padding: 14px 16px;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.glow2{
+  font-size: 15px;
+  color: #fff;
+  text-align: right;
+  padding: 14px 16px;
+}
+.background{
+  background-image: url("ladies.jpg");
+  background-repeat: no-repeat;
+}
+
+.haa {
+  text-align: center;
+  background-color: #04AA6D;
+  margin: 5px;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+</style>
+
+
+</head>
+<body>
+     <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="nav-title">
+            Health & Happiness
+          </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="nav-links">
+          <a href="HomePage.html"><span class="glyphicon glyphicon-home"></span> Home</a>
+          <a href="FAQs.html">FAQs</a>
+          <a href="covid.html">Covid</a>
+          <a href="1.html">Insurance</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a>
+          <a href="login.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+      
+<h1 class= "haa" >Health Insurance</h1>
+<br>
+<h2 class= "haa" >Choose your Plan</h2>
+  <div class="container">
+
+    <ul class="responsive-table">
+
+            <!-- <button class="collapsible"><a href="#">First Year </a>
+            </button>
+            <a href="#">sysllabus</a>
+            <a href="#">books</a>  -->
+
+
+
+  <!-- <li class="dropdown"><a class="active dropbtn" href="#fe">First Year ▼</a>
+    <div class="dropdown-content">
+      <a href="#">sysllabus</a>
+      <a href="#"> link 2</a> 
+      <a href="#"> link 3</a> 
+
+    </div>
+  </li> 
+
+  <li class="dropdown"><a class="dropbtn" href="#comp">Comp ▼</a>
+    <div class="dropdown-content">
+      <a href="#">link 1</a>
+      <a href="#"> link 2</a>
+      <a href="#"> link 3</a>
+  
+    </div>
+  </li>  -->
+
+  <!-- <div class="content">
+    <li class="table-row">
+      <div class="col col-1" data-label="Job Id"> Higher Engineering Mathematics</div>
+      <div class="col col-2" data-label="Customer Name">B.V. Ramana</div>
+      <div class="col col-3" data-label="Amount">Tata-McGraw Hill</div> -->
+      <!-- <div class="col col-4" data-label="Amount" ><a href="#">Download</a></div> -->
+    <!-- </li> -->
+  <!-- <li class="dropdown"><a class="dropbtn" href="#it">IT ▼</a>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </li> -->
+  <!-- <li class="dropdown"><a class="dropbtn" href="#entc">E&TC ▼</a>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </li>
+
+
+  <li class="glow" >Radhe Radhe</l1>
+
+     <li class="glow2">About Us</l1>
+</ul> -->
+
+
+
+<div class="container">
+    <div class="card__container">
+      
+      <div class="card">
+          <a href="fe.html">
+        <div class="card__content">
+          <div class="background">
+            
+          <h3 class="card__header">Me </h3>
+        </div>
+        </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="mh.html">
+        <div class="card__content">
+          <h3 class="card__header">Me + My husband</h3>
+        </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="couple_one_child.html">
+        <div class="card__content">
+          <h3 class="card__header">Me + My husband+ 1 child</h3>
+        </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="couple_two_child.html">
+        <div class="card__content">
+          <h3 class="card__header">Me + My husband+ 2 child</h3>
+          
+       </div>
+       </a>
+    </div>
+  </div>
+  
+<script src="script.js"></script>
+
+
+</body>
+</html>
